@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="login">
+      <form>
+        <label class="key loginTitles" for="serverurl">JIRA URL</label>
+        <input name="serverurl">
+        <label class="key loginTitles" for="username">JIRA Username (E-Mail)</label>
+        <input name="username">
+        <label class="key loginTitles" for="password">JIRA Token</label>
+        <input class="last" name="password" type="password">
+        <div class="key loginTitles"><a href="https://id.atlassian.com/manage-profile/security/api-tokens">Create an Atlassian Token for your account</a></div>
+        <button id="login" type="submit">Login</button>
+      </form>
+    </div>
+    <div id="controlbar">
+      <span id="btn-hide-read" class="button"><img src="../../assets/read.png"></span>
+      <span id="btn-only-assigned-to-me" class="button"><img src="../../assets/assigned.png"></span>
+      <span id="btn-priority-greater-equal-high" class="button"><img src="../../assets/high.png"></span>
+      <span id="btn-priority-greater-equal-medium" class="button"><img src="../../assets/medium.png"></span>
+      <span id="btn-priority-greater-equal-low" class="button"><img src="../../assets/low.png"></span>
+    </div>
+    <div id="filterbar">
+      <input id="filter-input" type="text">
+    </div>
+    <ul id="database">
+    </ul>
+    <script src="renderer.js"></script>
+  </body>
+</html>

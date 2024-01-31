@@ -1,0 +1,65 @@
+{
+  "name": "jino",
+  "productName": "jino",
+  "description": "Notification panel for JIRA Tickets",
+  "version": "2.0.1",
+  "author": "me1es",
+  "copyright": "© 2024",
+  "homepage": "http://example.com",
+  "license": "MIT",
+  "main": "src/main/app.js",
+  "build": {
+    "appId": "jino",
+    "files": [
+      "src/",
+      "node_modules/"
+    ],
+    "mac": {
+      "artifactName": "${productName}_Setup.${ext}",
+      "icon": "build/logo.icns",
+      "category": "public.app-category.utilities",
+      "hardenedRuntime": true,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "gatekeeperAssess": false,
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "artifactName": "${productName}_Setup.${ext}",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "perMachine": true,
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "uninstallDisplayName": "Jino"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "npm version patch && electron-builder",
+    "dist:mac": "electron-builder -m --x64"
+  },
+  "dependencies": {
+    "keytar": "^7.9.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "electron": "^27.3.0",
+    "electron-builder": "^24.9.1"
+  }
+}

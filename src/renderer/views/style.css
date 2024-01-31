@@ -1,0 +1,174 @@
+body {
+    font-size: 12px;
+    color: #333;
+    font-family: sans-serif;
+    
+  }
+  ul {
+    padding-left: 0px;
+    list-style: none;
+    padding-top: 33px;
+  }
+  li {
+      
+      padding-bottom: 0.5em;
+      padding-top: 0.5em;
+      border-top: solid #ececec 1px;
+      overflow: hidden;
+      color: lightgray;
+
+      transition-property: width;
+      transition-duration: 2s;
+      transition-timing-function: linear;
+      transition-delay: 1s;
+  }
+
+  span.read {
+    display: inline-block;
+    width: 2em;
+    cursor: pointer;
+  }
+
+  span.read::before {
+    content: "\25CB";
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    font-size: 150%;
+  }
+
+  span.content {
+    display: inline-block;
+    width: 92%;
+    cursor: pointer;
+  }
+
+  .key {
+    font-size: 10px;
+    margin-right: 0.5em;
+    color: #999;
+    display: block;
+  }
+
+  .loginTitles {
+      margin-left: 4.5em;
+  }
+
+  .key > a {
+    color: #999;
+  }
+
+  .summary {
+    width: 100%;
+    overflow: hidden;
+    height: 1.1em;
+    display: block;
+  }
+
+  li.unread {
+    color: #333;
+  }
+
+  .login button {
+    margin-top: 1em;
+  }
+
+ li.priority-high {
+    border-left: 7px solid #ff7171;
+    margin-left: -8px;
+ }
+
+ li.priority-medium {
+    border-left: 7px solid #ffa336;
+    margin-left: -8px;
+ }
+
+ li.priority-low {
+    border-left: 7px solid #74ca74;
+    margin-left: -8px;
+ }
+
+ li.unread span.read::before {
+    content: "\25CF";
+    color: #888;
+  }
+
+  li.unread.assigned-to-me span.read::before {
+    content: "\25CF";
+    color: #ff9b00;
+  }
+
+  li.assigned-to-me {
+    z-index: initial; /*placeholder*/
+  }
+
+
+  #controlbar .button {
+    opacity: 0.2;
+    cursor: pointer; 
+  }
+  span.on {
+    opacity: 0.8 !important;
+  }
+
+  #controlbar img {
+    max-width: 23px;
+    max-height: 20px;
+  }
+
+  #controlbar span {
+    margin-right: 10px;
+  }
+
+  .login input, button {
+      font-size: 12px;
+      margin-left: 3.6em;
+      padding: 0.3em;
+      margin-bottom: 1em;
+  }
+
+  input.last {
+      margin-bottom: 0.2em;
+  }
+
+  .login {
+    margin-top: 4em;
+  }
+
+  #controlbar {
+    visibility: hidden;
+    position:fixed;
+    top: 0px;
+    height: 20px;
+    background-color: white;
+    width: 100%;
+    box-shadow: 1px 1px 3px #999;
+    left: 0px;
+    padding: 13px;
+    font-size: 18px;
+  }
+
+  #filterbar {
+    display: none;
+    position: fixed;
+    top: 46px;
+    padding: 10px; 
+    box-shadow: 1px 1px 3px #999;
+    font-size: 12px;
+    background-color: white;
+    left: 0;
+    width: 100%;
+  }
+
+  #database.shiftForFilterBar {
+    padding-top: 73px;
+  }
+
+  #filterbar input {
+    font-size: 12px;;
+  }
+
+  .filterHide {
+    display: none;
+  }
+
+
