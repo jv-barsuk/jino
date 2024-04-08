@@ -79,7 +79,7 @@ function updateIssue(err, row, elem) {
         body: elem.key + " " + elem.fields.summary
       })
     }
-    if (document.getElementById(elem.key) != null) {
+    if (document.getElementById(elem.key) != null && (row?.last_updated < updated && viewed < updated && updatedOnlyByMe == false)) {
       document.getElementById(elem.key).classList.add("unread")
     } else {
 
