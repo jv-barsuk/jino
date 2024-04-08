@@ -69,10 +69,10 @@ class DatabaseModel {
      * @param {*} callback function to handle the response
      */
     getIssueFromDB(element, callback) {
-        this.db.get("SELECT * FROM issues WHERE key=?", element.key, function(err, row) {
-            if(row != undefined) {
+        this.db.get("SELECT * FROM issues WHERE key='?'", element.key, function(err, row) {
+            // if(row != undefined) {
                 callback(err, row, element)
-            }
+            // }
         }.bind(this));
     }
 

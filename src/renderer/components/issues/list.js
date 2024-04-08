@@ -71,7 +71,7 @@ function updateIssue(err, row, elem) {
     let assignee_emailAddress = elem.fields.assignee
   }
 
-  if (row == undefined && updatedOnlyByMe == false || (row.last_updated < updated && viewed < updated && updatedOnlyByMe == false)) {
+  if (row == undefined && updatedOnlyByMe == false || (row?.last_updated < updated && viewed < updated && updatedOnlyByMe == false)) {
     dbm.updateIssueInDB(elem.key, elem.fields.summary, assignee_emailAddress, updated)
     window.notificationCount++
     if (window.notificationCount < 5) {
