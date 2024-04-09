@@ -79,12 +79,19 @@ function updateIssue(err, row, elem) {
         body: elem.key + " " + elem.fields.summary
       })
     }
-    if (document.getElementById(elem.key) != null && (row?.last_updated < updated && viewed < updated && updatedOnlyByMe == false)) {
-      document.getElementById(elem.key).classList.add("unread")
+
+    // if already in DOM list
+    if (document.getElementById(elem.key) != null) {
+
+      // if it has been updated set it to unread
+      if(row?.last_updated < updated && viewed < updated && updatedOnlyByMe == false) {
+        document.getElementById(elem.key).classList.add("unread")
+      }
+      // if it hasn't been updated, do nothing
+      
+    // if it's not already in DOM list, add it
     } else {
-
       console.log(elem?.fields?.assignee?.emailAddress)
-
       insertNewItem(elem.key, elem.fields.summary, elem?.fields?.assignee?.emailAddress)
     }
 
