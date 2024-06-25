@@ -58,6 +58,7 @@ function updateList(offset = 0) {
  */
 function updateIssue(err, row, elem) {
   console.log(`updating issue ${elem.key}`)
+  console.log(err)
   let updated = Date.parse(elem.fields.updated)
   let viewed = Date.parse(elem.fields.lastViewed)
   if (Number.isNaN(viewed)) { viewed = 0 }
@@ -70,7 +71,7 @@ function updateIssue(err, row, elem) {
   } catch {
     let assignee_emailAddress = elem.fields.assignee
   }
-
+  
   if (row == undefined && updatedOnlyByMe == false || (row?.last_updated < updated && viewed < updated && updatedOnlyByMe == false)) {
     dbm.updateIssueInDB(elem.key, elem.fields.summary, assignee_emailAddress, updated)
     window.notificationCount++
